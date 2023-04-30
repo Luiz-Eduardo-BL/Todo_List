@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/todoListPage.dart';
+import 'pages/onBoardingScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TodoListPage(),
+      initialRoute: 'welcome_screen',
+      routes: {
+        'welcome_screen': (context) => const OnBoardingScreen(),
+        'home_screen': (context) => TodoListPage()
+      },
     );
   }
 }
